@@ -4,7 +4,7 @@ import 'package:portfolio/controller/constants/screensize.dart';
 import 'package:portfolio/view/contact_screen/widget/contactcard.dart';
 import 'package:portfolio/view/education/widget/educationcard.dart';
 import 'package:portfolio/view/projectscreen/widgets/projectwidget.dart';
-import 'package:portfolio/view/skills/skillscreen.dart';
+
 import 'package:portfolio/view/about_me/about.me_desktop.dart';
 import 'package:portfolio/view/about_me/about.me_mobile.dart';
 import 'package:portfolio/view/header/desktop_sliver.dart';
@@ -16,12 +16,12 @@ import 'package:portfolio/view/skills/widget/skillcard1.dart';
 
 class Mainscreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> scaffoldkey = GlobalKey<ScaffoldState>();
-  final ScrollController _scrollController = ScrollController();
+  final ScrollController scrollController = ScrollController();
 
   Mainscreen({super.key});
 
   void scrollToTop() {
-    _scrollController.animateTo(
+    scrollController.animateTo(
       0,
       duration: Duration(seconds: 1),
       curve: Curves.easeInOut,
@@ -39,7 +39,7 @@ class Mainscreen extends StatelessWidget {
           body: Stack(
             children: [
               CustomScrollView(
-                controller: _scrollController,
+                controller: scrollController,
                 slivers: [
                   if (constraints.maxWidth >= mobilescreen)
                     DesktopSliver()
