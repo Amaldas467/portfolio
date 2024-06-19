@@ -1,0 +1,1 @@
+const mobilescreen = 600;
