@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/controller/constants/colorconstants.dart';
+import 'package:portfolio/view/contact_screen/contact.dart';
 
-import 'package:portfolio/skills/skill.dart';
+import 'package:portfolio/view/skills/skillscreen.dart';
 import 'package:portfolio/view/mainscreen/mainscreen.dart';
 
 class Customsliverappbar extends StatelessWidget {
@@ -13,20 +14,18 @@ class Customsliverappbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       leading: Padding(
-          padding: const EdgeInsets.only(top: 25),
-          child: IconButton(
-              onPressed: () => Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Mainscreen(),
-                  )),
-              icon: Icon(
-                Icons.arrow_back,
-                color: Colorconstants.textcolor,
-              ))),
+        padding: const EdgeInsets.only(top: 25),
+        child: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colorconstants.textcolor,
+          ),
+        ),
+      ),
       actions: [
         TextButton(
-            onPressed: () => Navigator.pushReplacement(
+            onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => Mainscreen(),
@@ -39,7 +38,7 @@ class Customsliverappbar extends StatelessWidget {
                   fontWeight: FontWeight.w500),
             )),
         TextButton(
-            onPressed: () => Navigator.pushReplacement(
+            onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => Mainscreen(),
@@ -52,20 +51,20 @@ class Customsliverappbar extends StatelessWidget {
                   fontWeight: FontWeight.w500),
             )),
         TextButton(
-            onPressed: () => Navigator.pushReplacement(
+            onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => Mainscreen(),
                 )),
             child: Text(
-              "EDucation",
+              "Education",
               style: GoogleFonts.chakraPetch(
                   color: Colorconstants.textcolor,
                   fontSize: 18,
                   fontWeight: FontWeight.w500),
             )),
         TextButton(
-            onPressed: () => Navigator.pushReplacement(
+            onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => Mainscreen(),
@@ -78,10 +77,10 @@ class Customsliverappbar extends StatelessWidget {
                   fontWeight: FontWeight.w500),
             )),
         TextButton(
-            onPressed: () => Navigator.pushReplacement(
+            onPressed: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => Mainscreen(),
+                  builder: (context) => ContactScreen(),
                 )),
             child: Text(
               "Contact",

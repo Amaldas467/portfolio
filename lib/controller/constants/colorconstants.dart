@@ -11,4 +11,6 @@ class Colorconstants {
   static Color containergrey = Color.fromARGB(255, 58, 58, 58);
   static Color mainwhite = Colors.white;
   static Color nothingred = Color(0xffD71921);
+
+  static Color lightgrey = Color.fromARGB(255, 132, 131, 131);
 }

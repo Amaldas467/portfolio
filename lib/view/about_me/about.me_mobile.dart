@@ -76,7 +76,7 @@ class Aboutme_mobile extends StatelessWidget {
                 ),
                 Align(
                   alignment: Alignment.centerLeft,
-                  child: Row(
+                  child: Column(
                     children: [
                       Text(
                         " Intern at Luminar TechnoHub  ",

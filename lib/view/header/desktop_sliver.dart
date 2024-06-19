@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/controller/constants/colorconstants.dart';
-import 'package:portfolio/skills/skill.dart';
+import 'package:portfolio/view/contact_screen/contact.dart';
+import 'package:portfolio/view/education/education.dart';
+import 'package:portfolio/view/projectscreen/projectscreen.dart';
+import 'package:portfolio/view/projectscreen/widgets/projectwidget.dart';
+import 'package:portfolio/view/skills/skillscreen.dart';
 import 'package:portfolio/view/mainscreen/mainscreen.dart';
 
 class DesktopSliver extends StatelessWidget {
@@ -24,7 +28,7 @@ class DesktopSliver extends StatelessWidget {
           child: Row(
             children: [
               TextButton(
-                onPressed: () => Navigator.pushReplacement(
+                onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => Mainscreen(),
@@ -39,7 +43,7 @@ class DesktopSliver extends StatelessWidget {
                 ),
               ),
               TextButton(
-                  onPressed: () => Navigator.pushReplacement(
+                  onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => SkillCard(),
@@ -52,10 +56,10 @@ class DesktopSliver extends StatelessWidget {
                         fontWeight: FontWeight.w500),
                   )),
               TextButton(
-                  onPressed: () => Navigator.pushReplacement(
+                  onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Mainscreen(),
+                        builder: (context) => Education(),
                       )),
                   child: Text(
                     "Education",
@@ -65,10 +69,10 @@ class DesktopSliver extends StatelessWidget {
                         fontWeight: FontWeight.w500),
                   )),
               TextButton(
-                  onPressed: () => Navigator.pushReplacement(
+                  onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Mainscreen(),
+                        builder: (context) => ProjectScreen(),
                       )),
                   child: Text(
                     "Project",
@@ -78,10 +82,10 @@ class DesktopSliver extends StatelessWidget {
                         fontWeight: FontWeight.w500),
                   )),
               TextButton(
-                  onPressed: () => Navigator.pushReplacement(
+                  onPressed: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Mainscreen(),
+                        builder: (context) => ContactScreen(),
                       )),
                   child: Text(
                     "Contact",

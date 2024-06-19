@@ -1,23 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/controller/constants/colorconstants.dart';
-import 'package:portfolio/controller/constants/navitems.dart';
 import 'package:portfolio/controller/constants/screensize.dart';
-import 'package:portfolio/skills/skill.dart';
+import 'package:portfolio/view/contact_screen/widget/contactcard.dart';
+import 'package:portfolio/view/education/widget/educationcard.dart';
+import 'package:portfolio/view/projectscreen/widgets/projectwidget.dart';
+import 'package:portfolio/view/skills/skillscreen.dart';
 import 'package:portfolio/view/about_me/about.me_desktop.dart';
 import 'package:portfolio/view/about_me/about.me_mobile.dart';
 import 'package:portfolio/view/header/desktop_sliver.dart';
 import 'package:portfolio/view/header/mobile_sliver.dart';
-
 import 'package:portfolio/view/header/widget/mobile_drawer.dart';
 import 'package:portfolio/view/homecard/Homecard_desktop.dart';
-
 import 'package:portfolio/view/homecard/homecard_mobile.dart';
+import 'package:portfolio/view/skills/widget/skillcard1.dart';
 
 class Mainscreen extends StatelessWidget {
-  final scaffoldkey = GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> scaffoldkey = GlobalKey<ScaffoldState>();
+  final ScrollController _scrollController = ScrollController();
 
   Mainscreen({super.key});
+
+  void scrollToTop() {
+    _scrollController.animateTo(
+      0,
+      duration: Duration(seconds: 1),
+      curve: Curves.easeInOut,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,66 +34,57 @@ class Mainscreen extends StatelessWidget {
       builder: (context, constraints) {
         return Scaffold(
           key: scaffoldkey,
-          endDrawer: Mobile_drawer(),
+          endDrawer: MobileDrawer(),
           backgroundColor: Colorconstants.scaffoldcolor,
-          body: CustomScrollView(
-            slivers: [
-              if (constraints.maxWidth >= mobilescreen)
-                DesktopSliver()
-              else
-                mobile_sliver(),
-              SliverList(
-                delegate: SliverChildListDelegate([
-                  // Home
+          body: Stack(
+            children: [
+              CustomScrollView(
+                controller: _scrollController,
+                slivers: [
                   if (constraints.maxWidth >= mobilescreen)
-                    Homecard_desktop()
+                    DesktopSliver()
                   else
-                    Homecard_mobile(),
+                    MobileSliver(
+                      ontap: () {
+                        scaffoldkey.currentState?.openEndDrawer();
+                      },
+                    ),
+                  SliverList(
+                    delegate: SliverChildListDelegate([
+                      // Home
+                      if (constraints.maxWidth >= mobilescreen)
+                        Homecard_desktop()
+                      else
+                        Homecard_mobile(),
 
-                  // About_me
-                  if (constraints.maxWidth >= mobilescreen)
-                    Aboutme()
-                  else
-                    Aboutme_mobile(),
+                      // About_me
+                      if (constraints.maxWidth >= mobilescreen)
+                        Aboutme()
+                      else
+                        Aboutme_mobile(),
+                      Skillcard1(),
+                      Educard(),
+                      ProjectGrid(),
+                      ContactCard(),
 
-                  // Other widgets like skills, etc.
-                  // Skillcard1(),
-                  // Skillcard2(),
-                  // Container(
-                  //   height: 500,
-                  //   color: Colors.amber,
-                  // ),
-                ]),
+                      SizedBox(height: 50),
+                    ]),
+                  ),
+                ],
+              ),
+              Positioned(
+                right: 20,
+                bottom: 20,
+                child: FloatingActionButton(
+                  onPressed: scrollToTop,
+                  backgroundColor: Colorconstants.textcolor,
+                  child: Icon(Icons.arrow_upward),
+                ),
               ),
             ],
           ),
         );
       },
     );
-  }
-}
-
-void _navigateToPage(BuildContext context, int index) {
-  switch (index) {
-    case 0:
-      Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => Mainscreen(),
-          ));
-      break;
-    case 1:
-      Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => SkillCard(),
-          ));
-      break;
-    case 2:
-      Navigator.pushNamed(context, '/contact');
-      break;
-    // Add more cases as needed
-    default:
-      Navigator.pushNamed(context, '/');
   }
 }

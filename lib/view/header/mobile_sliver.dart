@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/controller/constants/colorconstants.dart';
 
-class mobile_sliver extends StatelessWidget {
+class MobileSliver extends StatelessWidget {
   final Function()? ontap;
 
-  const mobile_sliver({super.key, this.ontap});
+  const MobileSliver({super.key, this.ontap});
 
   @override
   Widget build(BuildContext context) {
