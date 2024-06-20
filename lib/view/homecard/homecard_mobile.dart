@@ -110,7 +110,10 @@ class Homecard_mobile extends StatelessWidget {
                 child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         backgroundColor: Color.fromARGB(255, 233, 161, 38)),
-                    onPressed: () {},
+                    onPressed: () {
+                      _launchURL(
+                          "https://drive.google.com/file/d/1UDL1KhOwI-tN7DHQOQDfA50L4_06tODS/view?usp=sharing");
+                    },
                     child: Text(
                       "CV / Resume",
                       style: TextStyle(color: Colorconstants.textcolor),
