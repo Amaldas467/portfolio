@@ -38,32 +38,30 @@ class Skillcard1 extends StatelessWidget {
                     children: List.generate(8, (index) {
                       return Padding(
                         padding: const EdgeInsets.symmetric(vertical: 10.0),
-                        child: Flexible(
-                          child: Container(
-                            margin: EdgeInsets.symmetric(horizontal: 20),
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              color: Colorconstants.lightgrey,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Center(
-                              child: Row(
-                                children: [
-                                  Image.asset(
-                                    skillData[index]["imagePath"].toString(),
-                                    height: 35,
-                                    width: 35,
+                        child: Container(
+                          margin: EdgeInsets.symmetric(horizontal: 20),
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: Colorconstants.lightgrey,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  skillData[index]["imagePath"].toString(),
+                                  height: 35,
+                                  width: 35,
+                                ),
+                                SizedBox(width: 12),
+                                Text(
+                                  skillData[index]["title"].toString(),
+                                  style: GoogleFonts.chakraPetch(
+                                    color: Colorconstants.textcolor,
+                                    fontSize: 14,
                                   ),
-                                  SizedBox(width: 12),
-                                  Text(
-                                    skillData[index]["title"].toString(),
-                                    style: GoogleFonts.chakraPetch(
-                                      color: Colorconstants.textcolor,
-                                      fontSize: 14,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
@@ -77,6 +75,7 @@ class Skillcard1 extends StatelessWidget {
                         children: List.generate(4, (index) {
                           return Expanded(
                             child: Container(
+                              //width: 30,
                               margin: EdgeInsets.all(10),
                               padding: EdgeInsets.all(10),
                               decoration: BoxDecoration(
