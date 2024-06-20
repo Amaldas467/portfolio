@@ -62,9 +62,17 @@ class Mainscreen extends StatelessWidget {
                         Aboutme()
                       else
                         Aboutme_mobile(),
+
+                      //skills
                       Skillcard1(),
+
+                      //education
                       Educard(),
+
+                      //projects
                       ProjectGrid(),
+
+                      //contact
                       ContactCard(),
 
                       SizedBox(height: 50),

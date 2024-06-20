@@ -23,7 +23,7 @@ class MobileDrawer extends StatelessWidget {
       case 'Education':
         screen = Education();
         break;
-      case 'Project':
+      case 'Projects':
         screen = ProjectScreen();
         break;
       case 'Contact':
