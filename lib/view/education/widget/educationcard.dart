@@ -26,7 +26,7 @@ class Educard extends StatelessWidget {
         ),
         Padding(
           padding: mobileScreen
-              ? const EdgeInsets.symmetric(horizontal: 40)
+              ? const EdgeInsets.symmetric(horizontal: 30)
               : const EdgeInsets.symmetric(horizontal: 180),
           child: Column(
             children: [

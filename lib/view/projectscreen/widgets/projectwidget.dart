@@ -33,7 +33,7 @@ class ProjectGrid extends StatelessWidget {
         ),
         Padding(
           padding: mobilescren
-              ? const EdgeInsets.symmetric(horizontal: 10, vertical: 10)
+              ? const EdgeInsets.symmetric(horizontal: 5, vertical: 5)
               : const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
           child: GridView.builder(
             physics: NeverScrollableScrollPhysics(),
@@ -41,15 +41,15 @@ class ProjectGrid extends StatelessWidget {
             itemCount: ProjectData.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: mobilescren ? 2 : 3,
-              mainAxisSpacing: mobilescren ? 10 : 30,
-              crossAxisSpacing: mobilescren ? 5 : 30,
+              mainAxisSpacing: mobilescren ? 16 : 20,
+              crossAxisSpacing: mobilescren ? 5 : 20,
               childAspectRatio: 1, // Aspect ratio of grid items
             ),
             itemBuilder: (context, index) {
               return Padding(
                 padding: mobilescren
-                    ? const EdgeInsets.all(20)
-                    : const EdgeInsets.all(50),
+                    ? const EdgeInsets.all(10)
+                    : const EdgeInsets.all(40),
                 child: Container(
                   //height: 100,
                   //width: 100,

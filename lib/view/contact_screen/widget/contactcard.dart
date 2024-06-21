@@ -8,10 +8,10 @@ class ContactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screensize = MediaQuery.of(context).size;
-    final mobileScreen = screensize.width < 800;
+    final mobileScreen = screensize.width < 600;
     return Padding(
       padding: mobileScreen
-          ? const EdgeInsets.symmetric(horizontal: 60)
+          ? const EdgeInsets.symmetric(horizontal: 32)
           : const EdgeInsets.symmetric(horizontal: 180),
       child: Container(
         decoration: BoxDecoration(),

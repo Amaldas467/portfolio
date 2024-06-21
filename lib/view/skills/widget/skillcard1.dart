@@ -37,7 +37,7 @@ class Skillcard1 extends StatelessWidget {
                 ? Column(
                     children: List.generate(8, (index) {
                       return Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 10.0),
+                        padding: const EdgeInsets.symmetric(vertical: 6.0),
                         child: Container(
                           margin: EdgeInsets.symmetric(horizontal: 20),
                           padding: EdgeInsets.all(10),
@@ -133,9 +133,9 @@ class Skillcard1 extends StatelessWidget {
                   ),
             SizedBox(height: 20),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 20),
+              margin: EdgeInsets.symmetric(horizontal: 10),
               height: screensize.height / 1,
-              constraints: BoxConstraints(minHeight: 300),
+              constraints: BoxConstraints(minHeight: 200),
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.bottomLeft,
